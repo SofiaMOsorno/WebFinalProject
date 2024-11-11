@@ -1,0 +1,158 @@
+:root {
+    /* Definición de variables de color */
+    --BrandGris: #3c3530;
+    --BrandRosa: #ef4545;
+    --BrandRojo: #880d0d;
+}
+
+body {
+    background-image: url('./Media/Orderly.jpg');
+}
+
+.mainTitle {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--BrandRosa);
+    font-size: 120px;
+    text-align: center;
+    padding-top: 2%;
+  }
+
+.contenedorMeseros {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Mesero {
+    width: 22%;
+    height: 62vh;
+    margin-top: 2%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+}
+.ImgMesero{
+    height: 60vh;
+    object-fit: cover;
+}
+.Subtitle{
+    position: absolute;
+    bottom: 0px;
+    left: 5%;
+    background-color: var(--BrandGris);
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 42px;
+    padding: 10px 37px;
+    border-radius: 35px;
+}
+
+.Mesero:hover{
+    background-color: var(--BrandGris);
+    cursor: pointer;
+}
+
+/*----Inicio-----*/
+.Header-Title {
+    position: absolute;
+    top: 0px;
+    top: 4%;
+    width: 100%;
+    font-size: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 100%;
+    padding: 20px;
+}
+
+.Header-Title:hover{
+    color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.ImgHeader{
+    position: relative;
+    width: 90%;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.seccion, .SeccionMesero {
+    width: 90%;
+    font-size: 2vw;
+    text-align: center;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: var(--BrandGris);
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+    border-radius: 20px;
+}
+
+.seccion{
+    text-decoration: none;
+}
+.seccion:hover{
+    background-color: var(--BrandRosa);
+    color: white;
+}
+
+.SeccionMesero{
+    background-color: var(--BrandRojo);
+}
+
+.DatosMesero{
+    height: 100vh;
+    margin-left: 20%;
+}
+.descripcion{
+    background-color: rgba(255, 255, 255, 0.514);
+    height: 90vh;
+    width: 40%;
+    margin: 2%;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: end;
+    font-size: 20px;
+    
+}
+
+.bold{
+    font-weight: bolder;
+    line-height: 0px;
+}
+
+.Regresar{
+    background-color: black;
+}

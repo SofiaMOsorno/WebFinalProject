@@ -1,6 +1,6 @@
 Integrantes:
-Sofia Maisha Osorno Aimar
-Carlos Alan Solorio De Toro
+Sofia Maisha Osorno Aimar,
+Carlos Alan Solorio De Toro,
 Velazco Rosas Rafael Emilio
 
 Aplicación web para restaurantes

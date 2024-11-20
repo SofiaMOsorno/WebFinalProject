@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Order Me / main</title>
+        <meta charset="UTF-8">
+        <meta content="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link rel="stylesheet" href="/CSS/P05.css">
+
+        <script src="https://kit.fontawesome.com/95e2386fb6.js" crossorigin="anonymous"></script>
+
+        <!-- Fuente titular-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    </head>
+    <body style=" background-image: url('/Views/Media/Orderly.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;">
+        <h1 class="mainTitle" id="MainTitle" style="margin-bottom: 1%;">
+            Order Me
+        </h1>
+        <div class="contenedorBotones">
+            <a class="recuadroT volver" href="inicio">Salir</a>
+            <a class="recuadroT VerPedido" href="EditMenu">Mesa</a>
+        </div>
+        <a class="Subir" href="#MainTitle"><i id="Subir" class="fa-solid fa-chevron-up fa-3x mt-2"></i></a>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <div class="contenedorCategoríasGrande">
+            <div class="contenedorCategorías">
+                <a class="recuadroT" id="categ-Entradas" href="#Cortes" accesskey="a"><!--Ni de broma hago un html para cada una aqui ya entra script tambien-->
+                    Cortes
+                </a>
+                <a class="recuadroT" id="categ-Pizas" href="#Pizzas" accesskey="b">
+                    Pizzas
+                </a>
+                <a class="recuadroT" id="categ-Pastas" href="#Pastas" accesskey="c">
+                    Pastas
+                </a>
+                <a class="recuadroT" id="categ-Salads" href="#Salads" accesskey="d">
+                    Salads
+                </a>
+            </div>
+            <div class="contenedorCategorías">
+                <a class="recuadroT" id="categ-Bebidas" href="#Bebidas" accesskey="e">
+                    Bebidas
+                </a>
+                <a class="recuadroT" id="categ-Entradas" href="#Entradas" accesskey="f">
+                    Entradas
+                </a>
+                <a class="recuadroT" id="categ-Postres" href="#Postres" accesskey="g">
+                    Postres
+                </a>
+                <a class="recuadroT" id="categ-Extras" href="#Extras" accesskey="h">
+                    Extras
+                </a>
+            </div>
+        </div>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Cortes" role="region" aria-labelledby="Cortes">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Cortes</div>
+            <div class="contenedorProductos">
+                
+            </div>
+        </section>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+
+
+        <div id="Pizzas" class="section" role="region" aria-labelledby="Pizzas">
+            <div id="Categoria" class="recuadroT" style="text-align: center;">
+                Pizzas
+            </div>
+            <div class="contenedorProductos">
+
+                <!-- Peperoni -->
+                <div class="ProductContainer">
+                    <div class="ProductImgContainer">
+                        <img src="https://i.pinimg.com/736x/97/2e/13/972e13b00890e3d441be9aae612fa2ec.jpg" 
+                             class="ProductImg" 
+                             alt="Peperoni">
+                    </div>
+                    <div class="ProductName">
+                        Peperoni
+                    </div>
+                    <div class="ProductDescription">
+                        Pizza clásica de peperoni con arúgula en pan de masa madre.
+                    </div>
+                    <div class="ProductPrice">
+                        $149.99
+                    </div>
+                    <div class="ProductButtonsDiv">
+                        <button class="addToCart">+</button>
+                        <div class="InputQuantityContainer">
+                            <input type="number" class="QuantityInput" value="0" min="0">
+                            <div class="QuantityControls">
+                                <button class="QuantityAdd">+</button>
+                                <button class="QuantitySub">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Margarita -->
+                <div class="ProductContainer">
+                    <div class="ProductImgContainer">
+                        <img src="https://i.pinimg.com/736x/4e/e8/5a/4ee85ac0af1f550fc2681da11e97a4b0.jpg" 
+                             class="ProductImg" 
+                             alt="Peperoni">
+                    </div>
+                    <div class="ProductName">
+                        Margarita
+                    </div>
+                    <div class="ProductDescription">
+                        Pizza Margarita con jitomate, aceitunas y hierbas italianas.
+                    </div>
+                    <div class="ProductPrice">
+                        $149.99
+                    </div>
+                    <div class="ProductButtonsDiv">
+                        <button class="addToCart">+</button>
+                        <div class="InputQuantityContainer">
+                            <input type="number" class="QuantityInput" value="0" min="0">
+                            <div class="QuantityControls">
+                                <button class="QuantityAdd">+</button>
+                                <button class="QuantitySub">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hawaiana -->
+                <div class="ProductContainer">
+                    <div class="ProductImgContainer">
+                        <img src="https://i.pinimg.com/736x/78/e4/83/78e483f366b7561e178ad461d11c8b7a.jpg" 
+                             class="ProductImg" 
+                             alt="Peperoni">
+                    </div>
+                    <div class="ProductName">
+                        Hawaiana
+                    </div>
+                    <div class="ProductDescription">
+                        Pizza hawaiana de la casa, jamón irlandés recién ahumado.
+                    </div>
+                    <div class="ProductPrice">
+                        $149.99
+                    </div>
+                    <div class="ProductButtonsDiv">
+                        <button class="addToCart">+</button>
+                        <div class="InputQuantityContainer">
+                            <input type="number" class="QuantityInput" value="0" min="0">
+                            <div class="QuantityControls">
+                                <button class="QuantityAdd">+</button>
+                                <button class="QuantitySub">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prosciutto -->
+                <div class="ProductContainer">
+                    <div class="ProductImgContainer">
+                        <img src="https://i.pinimg.com/736x/50/23/2b/50232bbe904db99f0d457828e686a6a4.jpg" 
+                             class="ProductImg" 
+                             alt="Peperoni">
+                    </div>
+                    <div class="ProductName">
+                        Prosciutto
+                    </div>
+                    <div class="ProductDescription">
+                        Pizza de jamón serrano y arúgula, la especialidad del chef.
+                    </div>
+                    <div class="ProductPrice">
+                        $149.99
+                    </div>
+                    <div class="ProductButtonsDiv">
+                        <button class="addToCart">+</button>
+                        <div class="InputQuantityContainer">
+                            <input type="number" class="QuantityInput" value="0" min="0">
+                            <div class="QuantityControls">
+                                <button class="QuantityAdd">+</button>
+                                <button class="QuantitySub">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Pastas" role="region" aria-labelledby="Pastas">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Pastas</div>
+            <div class="contenedorProductos">
+                <!-- Aqui se agrega con front un bloque de html con los datos de la base de datos-->
+                <!-- Ya que funcione quitamos los bloques de categoría cortes y pizza, por el momento solo es para ilustrar el resultado de la interfaz-->
+
+
+
+            </div>
+        </section>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Salads" role="region" aria-labelledby="Salads">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Salads</div>
+            <div class="contenedorProductos">
+                
+            </div>
+        </section>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Bebidas" role="region" aria-labelledby="Bebidas">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Bebidas</div>
+            <div class="contenedorProductos">
+
+            </div>
+        </section>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Entradas" role="region" aria-labelledby="Entradas">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Entradas</div>
+            <div class="contenedorProductos">
+                
+            </div>
+        </section>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Postres" role="region" aria-labelledby="Postres">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Postres</div>
+            <div class="contenedorProductos">
+                
+            </div>
+        </section>
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Extras" role="region" aria-labelledby="Extras">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Extras</div>
+            <div class="contenedorProductos">
+                
+            </div>
+        </section>
+<!--/////////////////////////////////Scripts/////////////////////////////////-->
+        <script>
+            // JavaScript para incrementar y decrementar el valor
+            const input = document.getElementById('custom-number-input');
+
+            function increment() {
+                input.stepUp(); // Aumenta el valor en el paso especificado
+            }
+
+            function decrement() {
+                input.stepDown(); // Disminuye el valor en el paso especificado
+            }
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Controla el funcionamiento de la página-->
+    <script src="../Controllers/menuController.js"></script>
+    </body>
+</html>

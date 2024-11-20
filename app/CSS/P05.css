@@ -1,0 +1,468 @@
+:root {
+    /* Definición de variables de color */
+    --BrandGris: #3c3530;
+    --BrandRosa: #ef4545;
+    --BrandRojo: #880d0d;
+}
+
+
+.mainTitle {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--BrandRosa);
+    font-size: 120px;
+    text-align: center;
+    padding-top: 2%;
+  }
+
+.contenedorMeseros {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Mesero {
+    width: 22%;
+    height: 62vh;
+    margin-top: 2%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+}
+
+.ImgMesero{
+    height: 60vh;
+    object-fit: cover;
+}
+
+.Subtitle{
+    position: absolute;
+    bottom: 0px;
+    left: 4%;
+    background-color: var(--BrandGris);
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 41px;
+    padding: 10px 37px;
+    border-radius: 35px;
+}
+
+.Mesero:hover{
+    background-color: var(--BrandGris);
+    cursor: pointer;
+}
+
+/*----Inicio-----*/
+.Header-Title {
+    position: absolute;
+    top: 0px;
+    top: 4%;
+    width: 100%;
+    font-size: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 100%;
+    padding: 20px;
+}
+
+.Subir:hover{
+    background-color: var(--BrandRosa);
+    color: white;
+}
+
+.Subir{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    background-color: rgba(173, 173, 173, 0.582);
+    text-align: center;
+    padding-top: 0%;
+    height: 70px;
+    border-radius: 10px;
+    border: solid, 4px, white;
+    color: white;
+}
+
+.Header-Title:hover{
+    color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.ImgHeader{
+    position: relative;
+    width: 90%;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.seccion, .SeccionMesero {
+    width: 90%;
+    font-size: 2vw;
+    text-align: center;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: var(--BrandGris);
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+    border-radius: 20px;
+}
+
+.seccion{
+    text-decoration: none;
+}
+.seccion:hover{
+    background-color: var(--BrandRosa);
+    color: white;
+}
+
+.SeccionMesero{
+    background-color: var(--BrandRojo);
+}
+
+.DatosMesero{
+    height: 100vh;
+    margin-left: 20%;
+}
+.descripcion{
+    background-color: rgba(255, 255, 255, 0.514);
+    height: 90vh;
+    width: 40%;
+    margin: 2%;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: end;
+    font-size: 20px;
+    
+}
+
+.bold{
+    font-weight: bolder;
+    line-height: 0px;
+}
+
+.Regresar{
+    background-color: black;
+}
+
+.RegisterDiv, .OpenMenuDiv{
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.514);
+    
+    border-radius: 30px;
+}
+
+.RegisterDiv{
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 1%;
+    margin-top: 5%;
+}
+
+.OpenMenu, .Register{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+}
+.Register{
+    font-size: 2vw;
+    cursor: pointer;
+}
+.OpenMenuDiv{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1%;
+}
+
+.OpenMenu{
+    font-size: 10vw;
+    cursor: pointer;
+}
+
+.OpenMenu:hover, .Register:hover{
+    color: var(--BrandRojo);
+}
+
+.OpenMenuDiv:hover, .RegisterDiv:hover{
+    background-color: rgba(255, 255, 255, 0.226);
+}
+
+.modal-content{
+    background-color: rgba(255, 255, 255, 0.514);
+
+}
+
+.modal-header{
+    color: var(--BrandRojo);
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+}
+
+.BotonEntrar, .BotonRegistrarse{
+    background-color: rgba(255, 255, 255, 0.226);
+    border: transparent;
+    border-radius: 5px;
+    padding: 10px 100px;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-size: large;
+    color: var(--BrandRosa)
+}
+
+.BotonEntrar:hover, .BotonRegistrarse:hover{
+    background-color: rgba(255, 150, 132, 0.644);
+}
+
+.modal-body{
+    color: black;
+    font-weight: bold;
+}
+
+.OpenRegister{
+    text-decoration: none;
+    color: var(--BrandRosa);
+    background-color: rgba(255, 255, 255, 0.514);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+}
+
+.OpenRegister:hover{
+    color: black;
+    background-color: rgba(173, 173, 173, 0.582);
+    
+}
+
+.descMesero{
+    border-radius: 5px;
+    border: transparent;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.recuadroT{
+    background-color: rgba(255, 255, 255, 0.514);
+    padding: 1.5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 20px;
+    margin: 2%;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-size: 5vw;
+    color: white;
+    text-decoration: none;
+}
+
+.recuadroT:hover{
+    color: var(--BrandRosa);
+    background-color: rgba(255, 255, 255, 0.226);
+}
+
+.contenedorBotones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.DecLine{
+    width: 100%;
+}
+
+.contenedorCategoríasGrande{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.contenedorCategorías{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    padding: 2%;
+}
+
+.contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/*
+.QuantitySub{
+    margin-top: 5px;
+}
+    */
+
+.ProductContainer {
+    flex: 1 1 300px; /* Base de 300px, puede crecer o encogerse */
+    max-width: calc(25% - 2rem); /* Máximo 4 productos por fila */
+    min-width: 250px; /* Mínimo ancho para mantener el diseño */
+    background-color: rgba(255, 255, 255, 0.226);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0; /* Quitamos el margin porque usamos gap */
+    display: flex;
+    flex-direction: column;
+}
+.ProductImgContainer {
+    width: 100%;
+    aspect-ratio: 1; /* Mantiene la proporción cuadrada */
+    overflow: hidden;
+    border-radius: 10px;
+}
+.ProductImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: solid 3px white;
+    border-radius: 10px;
+}
+.ProductName {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    color: white;
+    border-bottom: solid 2px white;
+    margin-top: 1rem;
+}
+.ProductDescription {
+    color: white;
+    font-weight: 500;
+    padding: 0.8rem 0;
+    border-bottom: solid 2px white;
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio disponible */
+}
+.ProductPrice {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0.8rem 0;
+}
+.ProductButtonsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-top: auto; /* Empuja los botones al final del contenedor */
+}
+.addToCart {
+    background-color: var(--BrandRosa);
+    width: 30%;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 8px;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+.addToCart:hover {
+    background-color: var(--BrandRojo);
+}
+.InputQuantityContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+}
+.QuantityInput {
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: larger;
+    padding: 5px;
+    margin-right: 5px;
+}
+.QuantityControls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.QuantityAdd, .QuantitySub {
+    background-color: var(--BrandRojo);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 2.5vw;
+    height: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.QuantityAdd:hover, .QuantitySub:hover {
+    background-color: #bd1313;
+}
+
+/* Media queries de responsividad para que los productos se adapten a la pantalla*/
+@media screen and (max-width: 1200px) {
+    .ProductContainer {
+        max-width: calc(33.333% - 2rem); /* 3 productos por fila */
+    }
+}
+@media screen and (max-width: 900px) {
+    .ProductContainer {
+        max-width: calc(50% - 2rem); /* 2 productos por fila */
+    }
+}
+@media screen and (max-width: 600px) {
+    .ProductContainer {
+        max-width: 100%; /* 1 producto por fila */
+    }
+    
+    .contenedorProductos {
+        padding: 1rem;
+        gap: 1rem;
+    }
+}

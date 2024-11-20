@@ -1,0 +1,26 @@
+[
+    {
+        "Nombre": "Alan Del Toro",
+        "Edad": "58 años",
+        "Puesto": "Mesero",
+        "Perfil": "Alan es un mesero veterano con más de 30 años de experiencia en el sector. Su trato amable y profesional, junto con su amplio conocimiento de la carta, lo han convertido en un favorito de clientes frecuentes. Alan es paciente y detallista, siempre asegurándose de que cada pedido sea perfecto. Valorado por su dedicación y ética de trabajo, disfruta compartiendo su experiencia con compañeros más jóvenes y ayudando a mantener un ambiente de servicio excelente."
+    },
+    {
+        "Nombre": "Rafael Rosas",
+        "Edad": "32 años",
+        "Puesto": "Mesero",
+        "Perfil" : "Rafael es un líder en servicio al cliente con más de 9 años en el sector de la restauración. Ha trabajado como mesero senior y jefe de meseros, destacándose en la coordinación de equipos y en la creación de experiencias memorables para los clientes. Es experto en menús gourmet y tiene conocimientos avanzados en vinos. Su objetivo es continuar creciendo profesionalmente para, algún día, dirigir su propio restaurante."
+    },
+    {
+        "Nombre": "Sofía Aimar",
+        "Edad": "24 años",
+        "Puesto": "Mesera",
+        "Perfil": "Sofía es una mesera joven y entusiasta con tres años de experiencia en restaurantes de alta rotación. Es conocida por su amabilidad, rapidez y atención al detalle. Además, tiene habilidades en la recomendación de platillos y bebidas, y siempre busca ofrecer un servicio cálido que haga sentir a los clientes bienvenidos. Sofía está interesada en desarrollarse dentro de la industria y, eventualmente, en liderar su propio equipo en el área de hospitalidad."
+    },
+    {
+        "Nombre": "Dorx",
+        "Edad": "30 años",
+        "Puesto": "Mesero",
+        "Perfil": "Dorx es una mesera amable y con buena disposición, aunque a veces algo distraída. Lleva poco más de un año en el restaurante y ha aprendido a ganarse la simpatía de los clientes con su actitud positiva y su sentido del humor. Aunque a veces comete pequeños errores, se esfuerza siempre en corregirlos y mejorar. Su carácter amistoso y genuino hace que los clientes se sientan en confianza y disfruten de su servicio, apreciando su autenticidad y buen ánimo."
+    }
+]

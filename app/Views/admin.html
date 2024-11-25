@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Order Me / main</title>
+        <meta charset="UTF-8">
+        <meta content="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link rel="stylesheet" href="/CSS/P05.css">
+
+        <script src="https://kit.fontawesome.com/95e2386fb6.js" crossorigin="anonymous"></script>
+
+        <!-- Fuente titular-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    </head>
+    <body style=" background-image: url('/Views/Media/Orderly.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;">
+
+        <div class="contenedorBotones">
+            <a class="recuadroT volver" href="inicio">Salir</a>
+        </div>
+
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+
+        <section class="section" role="region" aria-labelledby="AdminPanel">
+            <div id="Categoria" class="recuadroT" style="text-align: center;">
+                Panel de Administración
+            </div>
+        
+            <div class="RegisterDiv">
+                <button id="newProductBtn" class="BotonRegistrarse">Añadir Nuevo Producto</button>
+            </div>
+        
+            <div id="productList" class="contenedorProductos">
+            </div>
+        </section>
+
+        <!-- Modal para productos -->
+        <div id="productModal" class="modal fade" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="modalTitle" class="modal-title">Nuevo Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="productForm">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Título</label>
+                                <input type="text" class="descMesero" id="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Categoría</label>
+                                <select class="descMesero" id="category" required>
+                                    <option value="Cortes">Cortes</option>
+                                    <option value="Pizzas">Pizzas</option>
+                                    <option value="Pastas">Pastas</option>
+                                    <option value="Salads">Ensaladas</option>
+                                    <option value="Bebidas">Bebidas</option>
+                                    <option value="Postres">Postres</option>
+                                    <option value="Entradas">Entradas</option>
+                                    <option value="Extras">Extras</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="url" class="form-label">URL de Imagen</label>
+                                <input type="url" class="descMesero" id="url" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Descripción</label>
+                                <textarea class="descMesero" id="description" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Precio</label>
+                                <input type="number" class="descMesero" id="price" step="0.01" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="stock" class="form-label">Stock</label>
+                                <input type="number" class="descMesero" id="stock" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="BotonEntrar" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="BotonRegistrarse">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="../Controllers/adminController.js"></script>
+
+    <!-- Estilos del modal, me rehúso a crear un archivo CSS solo para esto -->
+    <style>
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+        }
+        .modal-header {
+            border-bottom: 2px solid var(--BrandRosa);
+        }
+        .modal-footer {
+            border-top: 2px solid var(--BrandRosa);
+        }
+        .btn-close {
+            color: var(--BrandRosa);
+        }
+        .form-label {
+            color: var(--BrandGris);
+            font-weight: bold;
+        }
+        .descMesero {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+
+    </body>
+</html>

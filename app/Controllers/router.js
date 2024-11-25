@@ -15,6 +15,7 @@ router.get('/MenuView', (req, res) => res.sendFile(path.resolve(__dirname + "/
 router.get('/meseros', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/meseros.html")));
 router.use('/Controllers', express.static('app/Controllers'));
 router.get('/order', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/orden.html")));
+router.get('/admin', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/admin.html")));
 
 
  module.exports = router;

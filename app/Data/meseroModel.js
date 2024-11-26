@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Definición del esquema y modelo de usuario
 const userSchema = mongoose.Schema({
-    nummesero: {
+    numeroMesero: {
         type: Number,
         required: true
     },

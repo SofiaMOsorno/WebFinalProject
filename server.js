@@ -18,7 +18,7 @@ app.use('/Views', express.static('Views'));
 connectToDatabase();
 
 app.use('/api/products', productRoutes);
-app.use('/api/user', meseroRoutes);
+app.use('/api/users', meseroRoutes);
 app.use('/api/orders', orderRoutes); // Usar la ruta
 
 app.listen(PORT, () => {

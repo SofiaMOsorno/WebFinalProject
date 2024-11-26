@@ -5,20 +5,25 @@ const router = express.Router();
 // Ruta para crear una nueva orden
 router.post('/', async (req, res) => {
     try {
-        const { products, date } = req.body;
+        const { products, date, tableNumber } = req.body;
 
-        // Validar que los datos existan
-        if (!products) {
-            return res.status(400).json({ message: 'La orden debe incluir productos' });
+        // Validar número de mesa si se proporciona
+        if (tableNumber && (tableNumber < 1 || tableNumber > 24)) {
+            return res.status(400).json({ message: 'Número de mesa inválido' });
         }
 
-        // Crear y guardar la orden en la colección 'orders'
-        const order = new Order({ products, date: date || new Date() });
+        const order = new Order({
+            products,
+            date: date || new Date(),
+            tableNumber: tableNumber || Order.generateRandomTableNumber() // Usar método del modelo
+        });
+
         const savedOrder = await order.save();
 
         res.status(201).json({
             message: 'Orden creada exitosamente',
             orderId: savedOrder._id,
+            tableNumber: savedOrder.tableNumber
         });
     } catch (error) {
         console.error('Error al guardar la orden:', error);

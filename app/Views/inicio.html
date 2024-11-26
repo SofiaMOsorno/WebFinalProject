@@ -37,69 +37,90 @@
             <a class="OpenMenu" href="MenuView">MENU</a>
         </div>
 
-<!--/////////////////////////////////Modal Registrarse/////////////////////////////////-->
-        <div class="modal fade" id="Registrarse" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitleId">Registrarse</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+ <!-- Modal de Login -->
+<div class="modal fade" id="ingresar" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="user" name="user" placeholder="Usuario del mesero" required />
                     </div>
-                    <form class="modal-body">
-                        <div class="mb-3">
-                            <div class="container row p-0 b-0 mb-3">
-                                <div class="col-6 gr-2">
-                                    <input id="name" type="text" class="form-control" placeholder="Nombre" required>
-                                </div> 
-                                <div class="col-6 g-0">
-                                    <input id="lastName" type="text" class="form-control" placeholder="Apellido" required>
-                                </div> 
-                            </div>
-                            <input id="edad" type="number" class="form-control mb-3" placeholder="Edad" required>
-                            <input id="numMesero" type="number" class="form-control mb-3" placeholder="Numero de Mesero" required>
-                            <textarea id="descripcion" class="descMesero" rows="2" cols="50" placeholder="Descripción Breve..." required></textarea>
-                            <input type="password" class="form-control mb-3" placeholder="Contraseña" required>
-                            <input type="password" class="form-control mb-3" placeholder="Confirmar contraseña" required>
-                        </div>
-                        <div class="modal-footer submit_button">
-                            <button type="submit" class="BotonRegistrarse">Registrarse</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="mb-3">
+                        <label for="pswrd" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="pswrd" name="pswrd" placeholder="Ingrese contraseña" required />
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember" />
+                        <label class="form-check-label" for="remember">Recordar</label>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Entrar</button>
+                </form>
+                <hr>
+                <p class="text-center">¿No tienes una cuenta?</p>
+                <button 
+                    type="button" 
+                    class="btn btn-secondary w-100" 
+                    data-bs-target="#Registrarse" 
+                    data-bs-toggle="modal" 
+                    data-bs-dismiss="modal">
+                    Registrarse
+                </button>
             </div>
         </div>
-<!--/////////////////////////////////Modal Ingresar/////////////////////////////////-->
-        <div class="modal fade" id="ingresar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitleId"> Iniciar Sesión</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+</div>
+
+<!-- Modal de Registro -->
+<div class="modal fade" id="Registrarse" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" required />
                     </div>
-                    <form class="modal-body">
-                        <div class="mb-3">
-                            <label for="mail" class="form-label">Usuario</label><br>
-                            <div class="input-group">
-                                <input id="user" type="text" class="form-control" placeholder="Usuario del mesero" required>
-                                <span class="input-group-text"><i class='fas fa-user-alt'></i></span>
-                            </div>
-                            <label for="pswrd" class="form-label">Contraseña</label>
-                            <div class="input-group">
-                                <input id="pswrd" type="password" class="form-control" placeholder="Ingrese contraseña" required>
-                                <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                            </div>
-                        </div>
-                        <input type="checkbox"> Recordar
-                        <div class="submit_button mb-3">
-                            <button type="submit" class="BotonEntrar"><a style="color: #ef4545; text-decoration: none;" href="meseros">Entrar</a></button><!--depende de que usuario se ingrese, eso es de script-->
-                        </div>
-                        <div class="modal-footer registrarse">
-                            <p>¿No tienes la cuenta? <a class="OpenRegister" data-bs-toggle="modal" data-bs-target="#Registrarse" href="#Registrarse ">Regístra una cuenta</a></p>
-                        </div>
-                    </form>
-                </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input type="number" class="form-control" id="edad" name="edad" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="numMesero" class="form-label">Número de Mesero</label>
+                        <input type="number" class="form-control" id="numMesero" name="numMesero" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción Breve</label>
+                        <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required />
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Registrarse</button>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 <!--/////////////////////////////////Scripts/////////////////////////////////-->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -112,6 +133,8 @@
             crossorigin="anonymous"
         ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="../Controllers/modalController.js"></script>
 
     
     </body>

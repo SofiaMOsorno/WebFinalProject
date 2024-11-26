@@ -13,6 +13,8 @@ router.get('/mesero3', (req, res) => res.sendFile(path.resolve(__dirname + "/.
 router.get('/mesero4', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesero4.html")));
 router.get('/MenuView', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/MenuView.html")));
 router.get('/meseros', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/meseros.html")));
+router.get('/mesas', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesas.html")));
+router.get('/historial', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/historial.html")));
 router.use('/Controllers', express.static('app/Controllers'));
 router.get('/order', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/orden.html")));
 router.get('/admin', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/admin.html")));

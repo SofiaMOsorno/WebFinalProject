@@ -13,6 +13,8 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
         <link rel="stylesheet" href="/CSS/P05.css">
 
         <script src="https://kit.fontawesome.com/95e2386fb6.js" crossorigin="anonymous"></script>
@@ -22,37 +24,52 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     </head>
-    <body style=" background-image: url('/Views/Media/Orderly.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;">
-
-        <h1 class="mainTitle" style="margin-bottom: 1%;">
-            Order Me
-        </h1>
-        <div class="contenedorBotones">
-            <a class="recuadroT volver" href="inicio">Volver</a>
-            <a class="recuadroT EditarMenu" href="admin">Editar Menu</a>
+    <body style=" background-image: url('/Views/Media/Orderly.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+        <div id="MainScreen" style="height: 100%; width: 100%; margin: 0px; padding: 0px; display: none; flex-direction: column;">
+            <h1 class="mainTitle" style="margin-bottom: 1%;">
+                Order Me
+            </h1>
+            <div class="contenedorBotones">
+                <a class="recuadroT volver" href="inicio">Volver atras</a>
+                <a class="recuadroT EditarMenu" href="admin">Editar Menu</a>
+            </div>
+            <div class="contenedorMeseros" style="margin-top: 1%; margin-bottom: 2%;">
+                <a class="Mesero" href="mesero">
+                    <img class="ImgMesero" src="/Views/Media/Mesero1.png" alt="Mesero">
+                    <h2 class="Subtitle">Mesero 1</h2>
+                </a>
+                <a class="Mesero" href="mesero2">
+                    <img class="ImgMesero" src="/Views/Media/Mesero2.png" alt="Mesero">
+                    <h2 class="Subtitle">Mesero 2</h2>
+                </a>
+                <a class="Mesero" href="mesero3">
+                    <img class="ImgMesero" src="/Views/Media/Mesero3.png" alt="Mesero">
+                    <h2 class="Subtitle">Mesero 3</h2>
+                </a>
+                <a class="Mesero" href="mesero4">
+                    <img class="ImgMesero" src="/Views/Media/Mesero4.png" alt="Mesero">
+                    <h2 class="Subtitle">Mesero 4</h2>
+                </a>
+            </div>
         </div>
-        <div class="contenedorMeseros" style="margin-top: 1%; margin-bottom: 2%;">
-            <a class="Mesero" href="mesero1">
-                <img class="ImgMesero" src="/Views/Media/Mesero1.png" alt="Mesero">
-                <h2 class="Subtitle">Mesero 1</h2>
-            </a>
-            <a class="Mesero" href="mesero2">
-                <img class="ImgMesero" src="/Views/Media/Mesero2.png" alt="Mesero">
-                <h2 class="Subtitle">Mesero 2</h2>
-            </a>
-            <a class="Mesero" href="mesero3">
-                <img class="ImgMesero" src="/Views/Media/Mesero3.png" alt="Mesero">
-                <h2 class="Subtitle">Mesero 3</h2>
-            </a>
-            <a class="Mesero" href="mesero4">
-                <img class="ImgMesero" src="/Views/Media/Mesero4.png" alt="Mesero">
-                <h2 class="Subtitle">Mesero 4</h2>
-            </a>
+        <!--Modal de inicio y animación-->
+        <div class="modalMeseros" id="modalMeseros" style="display: flex; margin-top: 10%;">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">Ingresaste a la sesión de meseros</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-secondary w-100" id="CargarMeseros">Aceptar</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        <div id="divAnimacion" style="width: 100vw; display: none; align-items: center; text-align: center; justify-content: center; flex-direction: column;">
+            <p class="recuadroT mt-4">Cargando</p>
+            <dotlottie-player id="animacion" src="https://lottie.host/cf9705f3-894e-4413-b7ff-483b5af8b599/6PLCjPcSio.lottie" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player> 
+        </div>
 <!--/////////////////////////////////Scripts/////////////////////////////////-->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -64,8 +81,27 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="scripts.js"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        
+
+        <script src="scripts.js"></script>
+        <script>
+            document.getElementById('CargarMeseros').addEventListener('click', () => {
+                // Ocultar el modal
+                document.getElementById('modalMeseros').style.display = 'none';
+    
+                // Mostrar la animación
+                const animacion = document.getElementById('divAnimacion');
+                animacion.style.display = 'flex';
+    
+                // Después de 3 segundos, ocultar la animación y mostrar la pantalla principal
+                setTimeout(() => {
+                    animacion.style.display = 'none';
+                    document.getElementById('MainScreen').style.display = 'flex';
+                }, 3000);
+            });
+        </script>
     </body>
 </html>

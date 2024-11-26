@@ -7,10 +7,17 @@ const router = express.Router();
 // Ruta para servir el HTML
 router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/inicio.html")));
 router.get('/inicio', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/inicio.html")));
+
+//nuevo
+router.get('/mesero', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesero.html")));
+
+//Borrar meseros1-4 cuando se haga el dom de mesero
 router.get('/mesero1', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesero1.html")));
 router.get('/mesero2', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesero2.html")));
 router.get('/mesero3', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesero3.html")));
 router.get('/mesero4', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesero4.html")));
+//hasta aqui
+
 router.get('/MenuView', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/MenuView.html")));
 router.get('/meseros', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/meseros.html")));
 router.get('/mesas', (req, res) => res.sendFile(path.resolve(__dirname + "/../Views/mesas.html")));

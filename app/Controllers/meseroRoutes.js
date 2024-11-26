@@ -91,13 +91,13 @@ router.post('/', async (req, res) => {
 
         // Login exitoso
         res.status(200).json({ 
-            message: 'Inicio de sesión exitoso',
             user: { 
                 nombre: user.nombre, 
                 numeroMesero: user.numeroMesero,
                 puesto: user.puesto 
             }
         });
+        //res.redirect('/meseros');
 
     } catch (error) {
         console.error('Error en login:', error);

@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         modalBackdrop.remove();
                     }
 
-                    alert('Inicio de sesión exitoso');
+                    //alert('Inicio de sesión exitoso');
                     window.location.href = '/meseros';
                 } else {
                     alert(data.message || 'Error en el inicio de sesión');

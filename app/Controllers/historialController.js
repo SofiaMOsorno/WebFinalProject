@@ -108,9 +108,19 @@ class HistorialController {
     }
 
     calculateTotal(products) {
-        return Object.values(products).reduce((total, product) => {
-            return total + (product.price * product.quantity);
+        if (typeof products !== 'object' || products === null) {
+            console.warn('Products no es un objeto:', products);
+            return "0.00";
+        }
+    
+        const productArray = Object.values(products);
+        const total = productArray.reduce((total, product) => {
+            const price = parseFloat(product.price) || 0;
+            const quantity = parseInt(product.quantity) || 0;
+            return total + (price * quantity);
         }, 0);
+        
+        return total.toFixed(2); // solo 2 decimales
     }
 
     createProductSummary(products) {

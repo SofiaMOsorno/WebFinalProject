@@ -34,7 +34,7 @@
                 <a href="meseros" class="SeccionMesero">Meseros</a>
                 <a href="historial" class="seccion Historial">HISTORIAL</a>
                 <a href="mesas" class="seccion Mesas">MESAS</a>
-                <a href="#" class="seccion Menu">MENÚ</a>
+                <a href="MenuView" class="seccion Menu">MENÚ</a>
                 <a href="#" class="seccion Vaciar">VACIAR</a>
                 <a href="meseros" class="seccion Regresar">VOLVER</a>
             </div>
@@ -69,26 +69,7 @@
             </div>
             <!--Fue un ejemplo de mesa-->
         </div>
-        <!-- ver el modal-->
-        <a style="margin-left: 300px; text-decoration: none;" class="BotonCerrarMesa" data-bs-toggle="modal" data-bs-target="#CerrarMesa">Ver el modal</a>
-        <!--Modal de mandar mesa al historial-->
-        <div class="modal fade" id="CerrarMesa" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitleId">Cerrar Mesa</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form class="modal-body mb-3" style="color: white; text-decoration: none;">
-                        <div class="mb-3">La mesa se cerrará en esta sección pero la podrás visualizar en la sección de historial de mesas</div>
-                        <div class="modal-floor submit_button" style="text-align: center;">
-                            <button type="submit" class="BotonCerrarMesa m-3" style="background-color: #ef4545; width: 40%; border: transparent; border-radius: 5px; height: 35px; padding: 5px; font-family: 'Alfa Slab One'; color: white;">Aceptar</button>
-                            <button type="button" data-bs-dismiss="modal" aria-label="Close" class="BotonCancelar" style="background-color: #ef4545; width: 40%; border: transparent; border-radius: 5px; height: 35px; padding: 5px; font-family: 'Alfa Slab One'; color: white;">Cancelar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    
 <!--/////////////////////////////////Scripts/////////////////////////////////-->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -102,6 +83,6 @@
         ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="scripts.js"></script>
+    <script src="../Controllers/orderController.js"></script>
     </body>
 </html>

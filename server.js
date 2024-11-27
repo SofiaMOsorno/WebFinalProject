@@ -7,6 +7,7 @@ const connectToDatabase = require('./app/Data/db'); // Importar conexión a Mong
 const productRoutes = require('./app/Controllers/productRoutes'); 
 const orderRoutes = require('./app/Controllers/orderRoutes'); // Ruta para órdenes
 const meseroRoutes = require('./app/Controllers/meseroRoutes');
+const historialRoutes = require('./app/Controllers/historialRoutes');
 
 app.use(express.json());
 app.use(router);
@@ -19,6 +20,7 @@ connectToDatabase();
 
 app.use('/api/products', productRoutes);
 app.use('/api/users', meseroRoutes);
+app.use('/api/historial', historialRoutes);
 app.use('/api/orders', orderRoutes); // Usar la ruta
 
 app.listen(PORT, () => {

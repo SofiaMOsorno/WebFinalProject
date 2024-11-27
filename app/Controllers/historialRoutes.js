@@ -26,4 +26,15 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Obtener todo el historial
+router.get('/', async (req, res) => {
+    try {
+        const historial = await Historial.find().sort({ date: -1 }); // Ordenado por fecha descendente
+        res.status(200).json(historial);
+    } catch (error) {
+        console.error('Error al obtener el historial:', error);
+        res.status(500).json({ message: 'Error interno del servidor' });
+    }
+});
+
 module.exports = router;

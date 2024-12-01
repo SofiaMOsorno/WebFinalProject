@@ -1,54 +1,67 @@
 // Controlador para manejar el historial de órdenes en /historial
 class HistorialController {
     constructor() {
+        // Endpoint del historial
         this.historialEndpoint = '/api/historial';
+
+        // Inicializa el contenedor del historial
         this.contenedorHistorial = document.querySelector('.contenedorHistorial');
+
+        // Inicializa el historial
         this.init();
     }
 
     async init() {
+        // Se ejecuta al inicio y llama a la función que carga el historial
         await this.loadHistorial();
     }
 
     async loadHistorial() {
         try {
+            // Intenta cargar el historial
             const response = await fetch(this.historialEndpoint);
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`Error de HTTP! Estatus: ${response.status}`);
             }
             const historial = await response.json();
-            this.displayHistorial(historial);
-        } catch (error) {
+            this.displayHistorial(historial); // Muestra el historial resultante
+        } catch (error) { // Lanza error si algo sale mal
             console.error('Error cargando el historial:', error);
             this.showError('Error al cargar el historial');
         }
     }
 
     displayHistorial(historial) {
-        if (!this.contenedorHistorial) {
+        // Muestra el historial en pantalla
+        if (!this.contenedorHistorial) { // Si no tenemos el contenedor en el archivo HTML
             console.error('No se encontró el contenedor del historial');
             return;
         }
 
+        // Limpiamos el contenedor para evitar duplicados
         this.contenedorHistorial.innerHTML = '';
 
+        // Si no hay órdenes en el historial
         if (historial.length === 0) {
-            this.showEmptyState();
+            this.showEmptyState(); // Mostramos el historial vacío
             return;
         }
 
+        // Si sí hay órdenes en el historial, mostramos cada una
         historial.forEach(orden => {
             const mesaElement = this.createMesaElement(orden);
-            this.contenedorHistorial.appendChild(mesaElement);
+            this.contenedorHistorial.appendChild(mesaElement); // Las vamos poniendo con appendChild
         });
     }
 
     createMesaElement(orden) {
-        if (!orden || typeof orden !== 'object') {
+        // Crea un elemento HTML de mesa 
+        if (!orden || typeof orden !== 'object') { // Si la orden no existe o no es un objeto
             console.error('Orden inválida:', orden);
             return document.createTextNode('Error al cargar esta orden.');
         }
 
+        // Asignamos las variables de la orden
         const { tableNumber, date, products } = orden;
 
         // Crear contenedor para la mesa
@@ -59,6 +72,7 @@ class HistorialController {
         // Información de la mesa
         const mesaInfoDiv = document.createElement('div');
         mesaInfoDiv.style = "display: flex; flex-direction: column; width: 70%";
+        // Declaramos la plantilla HTML
         mesaInfoDiv.innerHTML = `
             <div style="display: flex; flex-direction: row;">
                 <p class="bold mt-4" style="font-family: 'Alfa Slab One', serif; font-weight: 400; font-size: 5vw; color: white;">Mesa: </p>
@@ -72,8 +86,11 @@ class HistorialController {
 
         // Crear listado de productos
         const productListDiv = document.createElement('div');
+        // Asignamos un estilo
         productListDiv.style = "margin-top: 10px;";
+        // Creamos un array de productos
         const productArray = Object.values(products);
+        // Para cada producto asignamos info
         productArray.forEach((product) => {
             const productItem = document.createElement('p');
             productItem.textContent = `${product.title} - $${product.price} x ${product.quantity}`;
@@ -81,14 +98,16 @@ class HistorialController {
             productListDiv.appendChild(productItem);
         });
 
+        // Metemos la lista de productsos
         mesaInfoDiv.appendChild(productListDiv);
 
-        // Total de la orden
+        // Mostrar total de la orden
         const totalDiv = document.createElement('p');
         totalDiv.textContent = `Total: $${this.calculateTotal(products)}`;
         totalDiv.style = "color: white; font-family: 'Alfa Slab One', serif; font-size: 2vw; margin-top: 10px;";
         mesaInfoDiv.appendChild(totalDiv);
 
+        // Metemos el total de la mesa
         mesaDiv.appendChild(mesaInfoDiv);
 
         // Estado completado (para el historial)
@@ -108,28 +127,33 @@ class HistorialController {
     }
 
     calculateTotal(products) {
-        if (typeof products !== 'object' || products === null) {
+        // Calcula el precio total de la orden a partir de un array de productos
+        if (typeof products !== 'object' || products === null) { // Maneja errores
             console.warn('Products no es un objeto:', products);
             return "0.00";
         }
     
+        // Hace un array de productos
         const productArray = Object.values(products);
+        // Creamos un total que es la suma de todos los precios
         const total = productArray.reduce((total, product) => {
             const price = parseFloat(product.price) || 0;
             const quantity = parseInt(product.quantity) || 0;
             return total + (price * quantity);
         }, 0);
         
-        return total.toFixed(2); // solo 2 decimales
+        return total.toFixed(2); // Muestra solo 2 decimales para evitar fallos en la precisión de punto flotante
     }
 
     createProductSummary(products) {
+        // Crea el resumen de cada producto
         return Object.values(products)
             .map(product => `${product.title} (${product.quantity})`)
             .join(', ');
     }
 
     showEmptyState() {
+        // Cuando no hay órdenes en historial
         this.contenedorHistorial.innerHTML = `
             <div style="text-align: center; padding: 20px; color: white;">
                 <p style="font-family: 'Alfa Slab One', serif; font-size: 2vw;">
@@ -139,6 +163,7 @@ class HistorialController {
         `;
     }
 
+    // Muestra mensaje de error
     showError(message) {
         this.contenedorHistorial.innerHTML = `
             <div style="text-align: center; padding: 20px; color: #ef4545;">

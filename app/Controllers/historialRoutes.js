@@ -16,11 +16,11 @@ router.post('/', async (req, res) => {
 
         const savedHistorial = await historial.save();
 
-        res.status(201).json({
+        res.status(201).json({ // Status si todo salió bien
             message: 'Pedido cerrado y guardado en el historial',
             historialId: savedHistorial._id,
         });
-    } catch (error) {
+    } catch (error) { // Manda mensaje de error si algo salió mal
         console.error('Error al guardar en el historial:', error);
         res.status(500).json({ message: 'Error interno del servidor' });
     }

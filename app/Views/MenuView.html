@@ -37,6 +37,9 @@
         <img class="DecLine" src="/Views/Media/DecorationLine.png">
         <div class="contenedorCategoríasGrande">
             <div class="contenedorCategorías">
+                <a class="recuadroT" id="categ-Bebidas" href="#Bebidas" accesskey="e">
+                    Bebidas
+                </a>
                 <a class="recuadroT" id="categ-Entradas" href="#Entradas" accesskey="f">
                     Entradas
                 </a>
@@ -46,16 +49,13 @@
                 <a class="recuadroT" id="categ-Pizas" href="#Pizzas" accesskey="b">
                     Pizzas
                 </a>
+            </div>
+            <div class="contenedorCategorías">
                 <a class="recuadroT" id="categ-Pastas" href="#Pastas" accesskey="c">
                     Pastas
                 </a>
-            </div>
-            <div class="contenedorCategorías">
                 <a class="recuadroT" id="categ-Salads" href="#Salads" accesskey="d">
                     Ensaladas
-                </a>
-                <a class="recuadroT" id="categ-Bebidas" href="#Bebidas" accesskey="e">
-                    Bebidas
                 </a>
                 <a class="recuadroT" id="categ-Postres" href="#Postres" accesskey="g">
                     Postres
@@ -66,11 +66,39 @@
             </div>
         </div>
 
+        <!-- Cuadro de búsqueda por texto -->
+        <div class="SearchContainer" style="width: 100%; display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+
+            <div class="SearchInputContainer" style="width: 60%; max-width: 800px;">
+                <input type="text" id="searchInput" placeholder="Buscar productos..." 
+                       style="width: 100%; padding: 15px; border-radius: 25px; border: none; 
+                              background-color: rgba(255, 255, 255, 0.756); color: white; 
+                              font-size: 1.2em; text-align: center;">
+            </div>
+
+            <div id="searchResults" class="contenedorProductos" style="margin-top: 20px;">
+                <!-- Aquí salen los resultados de la búsqueda -->
+
+            </div>
+
+        </div>
+
+        <!-- Sección de bebidas -->
+        <img class="DecLine" src="/Views/Media/DecorationLine.png">
+        <section id="Bebidas" role="region" aria-labelledby="Bebidas">
+            <div class="recuadroT" id="Categoria" style="text-align: center;">Bebidas</div>
+            <div class="contenedorProductos">
+                <!-- Aquí se ponen los productos dinámicamente -->
+
+            </div>
+        </section>
+
         <!-- Sección de entradas -->
         <img class="DecLine" src="/Views/Media/DecorationLine.png">
         <section id="Entradas" role="region" aria-labelledby="Entradas">
             <div class="recuadroT" id="Categoria" style="text-align: center;">Entradas</div>
             <div class="contenedorProductos">
+                <!-- Aquí se ponen los productos dinámicamente -->
                 
             </div>
         </section>
@@ -80,6 +108,7 @@
         <section id="Cortes" role="region" aria-labelledby="Cortes">
             <div class="recuadroT" id="Categoria" style="text-align: center;">Cortes</div>
             <div class="contenedorProductos">
+                <!-- Aquí se ponen los productos dinámicamente -->
                 
             </div>
         </section>
@@ -87,12 +116,9 @@
         <!-- Sección de pizzas -->
         <img class="DecLine" src="/Views/Media/DecorationLine.png">
         <div id="Pizzas" class="section" role="region" aria-labelledby="Pizzas">
-            <div id="Categoria" class="recuadroT" style="text-align: center;">
-                Pizzas
-            </div>
+            <div id="Categoria" class="recuadroT" style="text-align: center;">Pizzas</div>
             <div class="contenedorProductos">
-
-                
+                <!-- Aquí se ponen los productos dinámicamente -->
 
             </div>
         </div>
@@ -102,10 +128,7 @@
         <section id="Pastas" role="region" aria-labelledby="Pastas">
             <div class="recuadroT" id="Categoria" style="text-align: center;">Pastas</div>
             <div class="contenedorProductos">
-                <!-- Aqui se agrega con front un bloque de html con los datos de la base de datos-->
-                <!-- Ya que funcione quitamos los bloques de categoría cortes y pizza, por el momento solo es para ilustrar el resultado de la interfaz-->
-
-
+                <!-- Aquí se ponen los productos dinámicamente -->
 
             </div>
         </section>
@@ -115,16 +138,8 @@
         <section id="Salads" role="region" aria-labelledby="Salads">
             <div class="recuadroT" id="Categoria" style="text-align: center;">Ensaladas</div>
             <div class="contenedorProductos">
+                <!-- Aquí se ponen los productos dinámicamente -->
                 
-            </div>
-        </section>
-
-        <!-- Sección de bebidas -->
-        <img class="DecLine" src="/Views/Media/DecorationLine.png">
-        <section id="Bebidas" role="region" aria-labelledby="Bebidas">
-            <div class="recuadroT" id="Categoria" style="text-align: center;">Bebidas</div>
-            <div class="contenedorProductos">
-
             </div>
         </section>
 
@@ -133,6 +148,7 @@
         <section id="Postres" role="region" aria-labelledby="Postres">
             <div class="recuadroT" id="Categoria" style="text-align: center;">Postres</div>
             <div class="contenedorProductos">
+                <!-- Aquí se ponen los productos dinámicamente -->
                 
             </div>
         </section>
@@ -142,9 +158,12 @@
         <section id="Extras" role="region" aria-labelledby="Extras">
             <div class="recuadroT" id="Categoria" style="text-align: center;">Extras</div>
             <div class="contenedorProductos">
+                <!-- Aquí se ponen los productos dinámicamente -->
                 
             </div>
         </section>
+
+
 <!--/////////////////////////////////Scripts/////////////////////////////////-->
         <script>
             // JavaScript para incrementar y decrementar el valor de los botones

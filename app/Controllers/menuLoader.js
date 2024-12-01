@@ -11,8 +11,14 @@ class MenuLoader {
         // Carga el carrito actual
         this.cart = this.loadCart();
 
+        // Almacena todos los productos (necesario para la función de búsqueda)
+        this.products = [];
+
         // Inicia el mapeo de secciones del menú
         this.initializeCategorySections();
+
+        // Inicializa la función de búsqueda en el menú
+        this.initializeSearchFunctionality();
     }
 
     loadCart() {
@@ -41,6 +47,22 @@ class MenuLoader {
         });
     }
 
+    initializeSearchFunctionality() {
+        const searchInput = document.getElementById('searchInput'); // Obtiene el texto a buscar
+        const searchResults = document.getElementById('searchResults'); // Obtenemos el div donde vamos a insertar los productos resultado
+        let debounceTimer; // Ponemos un timer para evitar que se haga doble click
+
+        if (searchInput && searchResults) { // Si hay texto a buscar y hay resultados
+            searchInput.addEventListener('input', (e) => { // Ponemos un eventListener
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => { // Configuramos el debounce
+                    const searchTerm = e.target.value.trim().toLowerCase();
+                    this.performSearch(searchTerm);
+                }, 300); // Debounce de 300ms
+            });
+        }
+    }
+
     // Método para cargar los productos desde el servidor
     async loadProducts() {
         try {
@@ -56,11 +78,45 @@ class MenuLoader {
             // Convertir la respuesta en un JSON
             const products = await response.json();
 
+            // Guardar los productos para búsquedas
+            this.products = products; 
+
             // Llamar al método para mostrar los productos en el menú
             this.displayProducts(products);
         } catch (error) {
             // Capturar errores y mostrarlos en la consola
             console.error('Error cargando los productos:', error);
+        }
+    }
+
+    performSearch(searchTerm) {
+        const searchResults = document.getElementById('searchResults'); // Obtenemos el div donde vamos a meter los productos resultantes
+        searchResults.innerHTML = ''; // Limpiar resultados anteriores para evitar duplicados
+
+        if (!searchTerm) {
+            return; // Si la búsqueda está vacía, no mostrar nada
+        }
+
+        const filteredProducts = this.products.filter(product => { // Filtrar productos por título o descripción en minúscula
+            return product.title.toLowerCase().includes(searchTerm) ||
+                   product.description.toLowerCase().includes(searchTerm) ||
+                   product.category.toLowerCase().includes(searchTerm);
+        });
+
+        if (filteredProducts.length === 0) {
+            // Mostrar mensaje si no hay resultados
+            searchResults.innerHTML = `
+                <div style="width: 100%; text-align: center; padding: 20px; color: white; 
+                            background-color: rgba(255, 255, 255, 0.226); border-radius: 10px;">
+                    <p style="font-family: 'Alfa Slab One', serif; font-size: 1.5em;">
+                        No se encontraron productos que coincidan con "${searchTerm}"
+                    </p>
+                </div>`;
+        } else {
+            // Mostrar productos encontrados
+            filteredProducts.forEach(product => {
+                searchResults.appendChild(this.createProductElement(product));
+            });
         }
     }
 

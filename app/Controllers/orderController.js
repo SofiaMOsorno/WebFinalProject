@@ -52,6 +52,7 @@ function createMesaElement(order) {
 
     // Crear contenedor para la mesa
     const mesaDiv = document.createElement('div');
+    mesaDiv.id = `mesa-${tableNumber}`; // Asignar ID único basado en el número de mesa
     mesaDiv.classList.add('Mesa');
     mesaDiv.style = "display: flex; flex-direction: row; background-color:rgba(255, 255, 255, 0.226); border-radius: 10px; padding: 2%; width: 100%; margin: 3%";
 
